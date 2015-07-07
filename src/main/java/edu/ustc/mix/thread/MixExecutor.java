@@ -8,7 +8,7 @@ public class MixExecutor {
 	
 	public static final Integer THREAD_POOL_SIZE = 5;
 	
-	public static void execute() throws Exception {
+	public static void executeCallable() throws Exception {
 		
 		ExecutorService pool = Executors.newFixedThreadPool(THREAD_POOL_SIZE);
 		
@@ -23,7 +23,20 @@ public class MixExecutor {
 		pool.shutdown();
 	}
 	
+	public static void executeRunnable() throws Exception {
+		
+		ExecutorService pool = Executors.newFixedThreadPool(THREAD_POOL_SIZE);
+		
+		for(int i = 0; i < THREAD_POOL_SIZE; i++) {
+			Runnable task = new MixRunnable(i);
+			pool.submit(task);
+		}
+		
+		pool.shutdown();
+	}
+	
 	public static void main(String[] args) throws Exception {
-		execute();
+		executeCallable();
+		executeRunnable();
 	}
 }
