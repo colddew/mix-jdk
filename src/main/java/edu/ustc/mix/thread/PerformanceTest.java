@@ -11,7 +11,7 @@ public class PerformanceTest {
 		long start = System.currentTimeMillis();
 		
 		for (int i = 0; i < 100; i++) {
-			Thread.sleep(100);
+			Thread.sleep(1000);
 		}
 		
 		System.out.println("serialize cost " + (System.currentTimeMillis() - start) + " ms");
@@ -24,27 +24,13 @@ public class PerformanceTest {
 		ExecutorService pool = Executors.newFixedThreadPool(20);
 		
 		for (int i = 0; i < 100; i++) {
-			
-			Runnable task = new Runnable() {
-				
-				@Override
-				public void run() {
-					try {
-						Thread.sleep(100);
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-				}
-			};
-			
-			pool.submit(task);
+			pool.submit(new MixRunnable(i));
 		}
 		
 		pool.shutdown();
+		pool.awaitTermination(6, TimeUnit.HOURS);
 		
-		pool.awaitTermination(10, TimeUnit.SECONDS);
-		
-		System.out.println("serialize cost " + (System.currentTimeMillis() - start) + " ms");
+		System.out.println("parallel cost " + (System.currentTimeMillis() - start) + " ms");
 	}
 	
 	public static void main(String[] args) throws Exception {
