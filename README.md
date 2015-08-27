@@ -1,2 +1,2 @@
 # mix-jdk
-jdk exercise
+jdk in action based on hotspot jvm 8
