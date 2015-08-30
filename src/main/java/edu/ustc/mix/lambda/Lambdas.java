@@ -5,6 +5,9 @@ import java.util.Comparator;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
+/**
+ * lambda表达式是一个带有参数的代码块
+ */
 @SuppressWarnings("restriction")
 public class Lambdas {
 	
