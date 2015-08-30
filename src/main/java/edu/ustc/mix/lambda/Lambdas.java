@@ -7,6 +7,8 @@ import javafx.event.EventHandler;
 
 /**
  * lambda表达式是一个带有参数的代码块
+ * 
+ * 以多线程、排序、按钮事件等为例
  */
 @SuppressWarnings("restriction")
 public class Lambdas {
@@ -41,6 +43,11 @@ public class Lambdas {
 	}
 	
 	public static void doWork() {
-		
+		System.out.println("Doing work...");
+		try {
+			Thread.sleep(100);
+		} catch (InterruptedException ex) {
+			Thread.currentThread().interrupt();
+		}
 	}
 }
