@@ -5,9 +5,12 @@ import java.util.Comparator;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
+@SuppressWarnings("restriction")
 public class Lambdas {
 	
+	@SuppressWarnings({ "unused" })
 	public static void main(String[] args) {
+		
 		
 		Comparator<String> comp = (String first, String second) -> Integer.compare(first.length(), second.length());
 		
@@ -30,8 +33,8 @@ public class Lambdas {
 		// Same as (String first, String second)
 		comp = (first, second) -> Integer.compare(first.length(), second.length());
 		
-		EventHandler<ActionEvent> listener = e -> System.out.println(e.getTarget());
 		// Instead of (e) -> or (ActionEvent e) ->
+		EventHandler<ActionEvent> listener = e -> System.out.println(e.getTarget());
 	}
 	
 	public static void doWork() {
