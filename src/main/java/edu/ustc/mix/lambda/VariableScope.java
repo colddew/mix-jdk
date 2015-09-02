@@ -98,7 +98,7 @@ public class VariableScope {
 	}
 	
 	@SuppressWarnings("unused")
-	public static void avoidDuplicateVariable() {
+	public static void duplicateVariable() {
 		
 		// Path first = Paths.get("/usr/bin");
 		// Uncomment to see error "variable first is already defined"
@@ -109,9 +109,9 @@ public class VariableScope {
 	
 	public void doWork() {
 		Runnable runner = () -> {
+			// this refers to an VariableScope object
 			System.out.println(this.toString());
 		};
 		runner.run();
-		// Prints Application@... since this refers to an Application object
 	}
 }
