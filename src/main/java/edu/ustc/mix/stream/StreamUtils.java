@@ -7,6 +7,8 @@ import java.util.stream.Stream;
 
 public class StreamUtils {
 	
+	public static final String FILE_PATH = "/Users/workspace-mars/mix-jdk/src/main/java/edu/ustc/mix/stream/alice.txt";
+	
 	public static <T> void show(String title, Stream<T> stream) {
 		
 		final int SIZE = 10;
