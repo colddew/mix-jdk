@@ -17,9 +17,11 @@ import java.util.stream.Stream;
 public class StreamCollectResult {
 	
 	public static Stream<String> noVowels(String filename) throws IOException {
+		
 		String contents = new String(Files.readAllBytes(Paths.get(filename)), StandardCharsets.UTF_8);
 		List<String> wordList = Arrays.asList(contents.split("[\\P{L}]+"));
 		Stream<String> words = wordList.stream();
+		
 		return words.map(s -> s.replaceAll("[aeiouAEIOU]", ""));
 	}
 	
@@ -51,7 +53,6 @@ public class StreamCollectResult {
 		System.out.println(numbers3); // Note it's an Integer[] array
 		
 		HashSet<String> noVowelHashSet = noVowels(StreamUtils.FILE_PATH).collect(HashSet::new, HashSet::add, HashSet::addAll);
-		
 		show("noVowelHashSet", noVowelHashSet);
 		
 		Set<String> noVowelSet = noVowels(StreamUtils.FILE_PATH).collect(Collectors.toSet());
@@ -68,10 +69,9 @@ public class StreamCollectResult {
 		
 		IntSummaryStatistics summary = noVowels(StreamUtils.FILE_PATH).collect(Collectors.summarizingInt(String::length));
 		double averageWordLength = summary.getAverage();
-		double maxWordLength = summary.getMax();
 		System.out.println("Average word length: " + averageWordLength);
+		double maxWordLength = summary.getMax();
 		System.out.println("Max word length: " + maxWordLength);
-		
 		noVowels(StreamUtils.FILE_PATH).limit(10).forEach(System.out::println);
 	}
 }

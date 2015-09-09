@@ -39,8 +39,7 @@ public class StreamAggregation {
 		Integer sum3 = values.reduce(0, (x, y) -> x + y);
 		System.out.println("sum3: " + sum3);
 		
-		String contents = new String(Files.readAllBytes(Paths.get("/Users/workspace-mars/mix-jdk/src/main/java/edu/ustc/mix/stream", 
-			"alice.txt")), StandardCharsets.UTF_8);
+		String contents = new String(Files.readAllBytes(Paths.get(StreamUtils.FILE_PATH)), StandardCharsets.UTF_8);
 		List<String> wordList = Arrays.asList(contents.split("[\\P{L}]+"));
 		Stream<String> words = wordList.stream();
 		int result = words.reduce(0, (s, w) -> s + w.length(), (s1, s2) -> s1 + s2);

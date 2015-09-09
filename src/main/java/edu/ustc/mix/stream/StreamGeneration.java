@@ -13,7 +13,7 @@ public class StreamGeneration {
 	
 	public static void main(String[] args) throws IOException {
 		
-		Path path = Paths.get("/Users/workspace-mars/mix-jdk/src/main/java/edu/ustc/mix/stream", "alice.txt");
+		Path path = Paths.get(StreamUtils.FILE_PATH);
 		String contents = new String(Files.readAllBytes(path), StandardCharsets.UTF_8);
 		
 		Stream<String> words = Stream.of(contents.split("[\\P{L}]+"));

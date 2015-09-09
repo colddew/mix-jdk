@@ -10,33 +10,9 @@ import java.util.stream.Stream;
 
 public class StreamConversion {
 	
-//	public static <T> void show(String title, Stream<T> stream) {
-//		
-//		final int SIZE = 10;
-//		List<T> firstElements = stream.limit(SIZE + 1).collect(Collectors.toList());
-//		System.out.print(title + ": ");
-//		
-//		if (firstElements.size() <= SIZE) {
-//			System.out.println(firstElements);
-//		} else {
-//			firstElements.remove(SIZE);
-//			String out = firstElements.toString();
-//			System.out.println(out.substring(0, out.length() - 1) + ", ...]");
-//		}
-//	}
-//	
-//	public static Stream<Character> characterStream(String s) {
-//		List<Character> result = new ArrayList<>();
-//		for (char c : s.toCharArray()) {
-//			result.add(c);
-//		}
-//		return result.stream();
-//	}
-	
 	public static void main(String[] args) throws IOException {
 		
-		String contents = new String(Files.readAllBytes(Paths.get("/Users/workspace-mars/mix-jdk/src/main/java/edu/ustc/mix/stream", 
-				"alice.txt")), StandardCharsets.UTF_8);
+		String contents = new String(Files.readAllBytes(Paths.get(StreamUtils.FILE_PATH)), StandardCharsets.UTF_8);
 		List<String> wordList = Arrays.asList(contents.split("[\\P{L}]+"));
 		Stream<String> words = wordList.stream();
 		Stream<String> longWords = words.filter(w -> w.length() > 12);

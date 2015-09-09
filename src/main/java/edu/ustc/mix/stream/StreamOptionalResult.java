@@ -15,8 +15,7 @@ public class StreamOptionalResult {
 	
 	public static void main(String[] args) throws IOException {
 		
-		String contents = new String(Files.readAllBytes(Paths.get("/Users/workspace-mars/mix-jdk/src/main/java/edu/ustc/mix/stream", 
-			"alice.txt")), StandardCharsets.UTF_8);
+		String contents = new String(Files.readAllBytes(Paths.get(StreamUtils.FILE_PATH)), StandardCharsets.UTF_8);
 		List<String> wordList = Arrays.asList(contents.split("[\\P{L}]+"));
 		
 		Optional<String> optionalValue = wordList.stream().filter(s -> s.contains("red")).findFirst();
