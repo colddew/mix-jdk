@@ -11,7 +11,7 @@ public class WordsStatistics {
 	
 	public static void main(String[] args) throws IOException {
 		
-		String contents = new String(Files.readAllBytes(Paths.get(StreamUtils.FILE_PATH)), StandardCharsets.UTF_8);
+		String contents = new String(Files.readAllBytes(Paths.get(StreamUtils.FILE_PATH_ALICE)), StandardCharsets.UTF_8);
 		List<String> words = Arrays.asList(contents.split("[\\P{L}]+"));
 		
 		long count = 0;

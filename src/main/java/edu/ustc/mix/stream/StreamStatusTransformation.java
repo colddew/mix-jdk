@@ -16,7 +16,7 @@ public class StreamStatusTransformation {
 		Stream<String> uniqueWords = Stream.of("merrily", "merrily", "merrily", "gently").distinct();
 		StreamUtils.show("uniqueWords", uniqueWords);
 		
-		String contents = new String(Files.readAllBytes(Paths.get(StreamUtils.FILE_PATH)), StandardCharsets.UTF_8);
+		String contents = new String(Files.readAllBytes(Paths.get(StreamUtils.FILE_PATH_ALICE)), StandardCharsets.UTF_8);
 		List<String> wordList = Arrays.asList(contents.split("[\\P{L}]+"));
 		Stream<String> words = wordList.stream();
 		StreamUtils.show("words", words);

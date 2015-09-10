@@ -12,7 +12,7 @@ public class StreamConversion {
 	
 	public static void main(String[] args) throws IOException {
 		
-		String contents = new String(Files.readAllBytes(Paths.get(StreamUtils.FILE_PATH)), StandardCharsets.UTF_8);
+		String contents = new String(Files.readAllBytes(Paths.get(StreamUtils.FILE_PATH_ALICE)), StandardCharsets.UTF_8);
 		List<String> wordList = Arrays.asList(contents.split("[\\P{L}]+"));
 		Stream<String> words = wordList.stream();
 		Stream<String> longWords = words.filter(w -> w.length() > 12);

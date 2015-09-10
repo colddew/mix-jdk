@@ -52,26 +52,26 @@ public class StreamCollectResult {
 		Integer[] numbers3 = Stream.iterate(0, n -> n + 1).limit(10).toArray(Integer[]::new);
 		System.out.println(numbers3); // Note it's an Integer[] array
 		
-		HashSet<String> noVowelHashSet = noVowels(StreamUtils.FILE_PATH).collect(HashSet::new, HashSet::add, HashSet::addAll);
+		HashSet<String> noVowelHashSet = noVowels(StreamUtils.FILE_PATH_ALICE).collect(HashSet::new, HashSet::add, HashSet::addAll);
 		show("noVowelHashSet", noVowelHashSet);
 		
-		Set<String> noVowelSet = noVowels(StreamUtils.FILE_PATH).collect(Collectors.toSet());
+		Set<String> noVowelSet = noVowels(StreamUtils.FILE_PATH_ALICE).collect(Collectors.toSet());
 		show("noVowelSet", noVowelSet);
 		
-		TreeSet<String> noVowelTreeSet = noVowels(StreamUtils.FILE_PATH).collect(Collectors.toCollection(TreeSet::new));
+		TreeSet<String> noVowelTreeSet = noVowels(StreamUtils.FILE_PATH_ALICE).collect(Collectors.toCollection(TreeSet::new));
 		show("noVowelTreeSet", noVowelTreeSet);
 		
-		String result = noVowels(StreamUtils.FILE_PATH).limit(10).collect(Collectors.joining());
+		String result = noVowels(StreamUtils.FILE_PATH_ALICE).limit(10).collect(Collectors.joining());
 		System.out.println(result);
 		
-		result = noVowels(StreamUtils.FILE_PATH).limit(10).collect(Collectors.joining(", "));
+		result = noVowels(StreamUtils.FILE_PATH_ALICE).limit(10).collect(Collectors.joining(", "));
 		System.out.println(result);
 		
-		IntSummaryStatistics summary = noVowels(StreamUtils.FILE_PATH).collect(Collectors.summarizingInt(String::length));
+		IntSummaryStatistics summary = noVowels(StreamUtils.FILE_PATH_ALICE).collect(Collectors.summarizingInt(String::length));
 		double averageWordLength = summary.getAverage();
 		System.out.println("Average word length: " + averageWordLength);
 		double maxWordLength = summary.getMax();
 		System.out.println("Max word length: " + maxWordLength);
-		noVowels(StreamUtils.FILE_PATH).limit(10).forEach(System.out::println);
+		noVowels(StreamUtils.FILE_PATH_ALICE).limit(10).forEach(System.out::println);
 	}
 }
