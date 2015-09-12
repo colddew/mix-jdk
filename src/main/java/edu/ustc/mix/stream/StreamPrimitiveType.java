@@ -46,7 +46,6 @@ public class StreamPrimitiveType {
 		
 		Path path = Paths.get(StreamUtils.FILE_PATH_ALICE);
 		String contents = new String(Files.readAllBytes(path), StandardCharsets.UTF_8);
-		
 		Stream<String> words = Stream.of(contents.split("[\\P{L}]+"));
 		IntStream is4 = words.mapToInt(String::length);
 		show("is4", is4);
