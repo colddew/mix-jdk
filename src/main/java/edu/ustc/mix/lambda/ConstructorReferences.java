@@ -12,7 +12,6 @@ import javafx.scene.layout.HBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
-@SuppressWarnings("restriction")
 public class ConstructorReferences extends Application {
 	
 	public void start(Stage stage) {

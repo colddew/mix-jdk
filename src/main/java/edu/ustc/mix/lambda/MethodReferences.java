@@ -10,7 +10,6 @@ import javafx.stage.Stage;
 /**
  * 传递已有方法等引用的方式（对象::实例方法、类::静态方法、类::实例方法）
  */
-@SuppressWarnings("restriction")
 public class MethodReferences extends Application {
 	
 	public void start(Stage stage) {

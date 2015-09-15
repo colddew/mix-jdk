@@ -12,7 +12,6 @@ import javafx.stage.Stage;
 /**
  * 对于只有一个抽象方法的接口，可以通过lambda表达式创建该接口的对象，称之为函数式接口
  */
-@SuppressWarnings("restriction")
 public class FunctionalInterfaces extends Application {
 	
 	@SuppressWarnings("unused")

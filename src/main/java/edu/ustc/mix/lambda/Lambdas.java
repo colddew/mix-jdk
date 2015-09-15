@@ -10,7 +10,6 @@ import javafx.event.EventHandler;
  * 
  * 以多线程、排序、按钮事件等为例
  */
-@SuppressWarnings("restriction")
 public class Lambdas {
 	
 	@SuppressWarnings({ "unused" })
