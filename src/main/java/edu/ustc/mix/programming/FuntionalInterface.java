@@ -16,7 +16,7 @@ interface ColorTransformer {
 	Color apply(int x, int y, Color colorAtXY);
 }
 
-public class ImageDemo extends Application {
+public class FuntionalInterface extends Application {
 	
 	public static Image transform(Image in, UnaryOperator<Color> f) {
 		
