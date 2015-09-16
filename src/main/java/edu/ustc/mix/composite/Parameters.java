@@ -1,4 +1,4 @@
-package edu.ustc.mix.programming;
+package edu.ustc.mix.composite;
 
 import java.util.function.IntConsumer;
 

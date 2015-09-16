@@ -1,22 +1,15 @@
-package edu.ustc.mix.programming;
+package edu.ustc.mix.composite;
 
 import java.util.function.UnaryOperator;
 
-import javafx.application.Application;
-import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
-import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
-import javafx.stage.Stage;
 
-@FunctionalInterface
-interface ColorTransformer {
-	Color apply(int x, int y, Color colorAtXY);
-}
-
-public class FuntionalInterface extends Application {
+public class CompositeUtils {
+	
+	public static final String IMAGE_PATH_QUEEN = "queen-mary.png";
+	public static final String IMAGE_PATH_EIFFEL = "eiffel-tower.jpg";
 	
 	public static Image transform(Image in, UnaryOperator<Color> f) {
 		
@@ -46,16 +39,5 @@ public class FuntionalInterface extends Application {
 		}
 		
 		return out;
-	}
-	
-	public void start(Stage stage) {
-		
-		Image image = new Image("queen-mary.png");
-		Image brightenedImage = transform(image, Color::brighter);
-		Image image2 = transform(image, (x, y, c) -> (x / 10) % 2 == (y / 10) % 2 ? Color.GRAY : c);
-		
-		stage.setScene(new Scene(new HBox(new ImageView(image), new ImageView(brightenedImage), 
-			new ImageView(image2))));
-		stage.show();
 	}
 }

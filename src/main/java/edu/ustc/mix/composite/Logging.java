@@ -1,4 +1,4 @@
-package edu.ustc.mix.programming;
+package edu.ustc.mix.composite;
 
 import java.util.function.Supplier;
 import java.util.logging.Level;
@@ -13,8 +13,10 @@ public class Logging {
 	}
 	
 	public static void main(String[] args) {
+		
 		double x = 3;
 		double y = 4;
+		
 		info(Logger.getGlobal(), () -> "x: " + x + ", y: " + y);
 	}
 }
