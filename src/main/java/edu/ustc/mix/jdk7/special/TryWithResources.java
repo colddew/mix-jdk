@@ -11,6 +11,7 @@ import java.util.Scanner;
 public class TryWithResources {
 	
 	public static final String FILE_PATH_CITIES = "/Users/workspace-mars/mix-jdk/src/main/java/edu/ustc/mix/stream/cities.txt";
+	public static final String FILE_OUT = "/tmp/jdk7/out.txt";
 	
 	public static void main(String[] args) {
 		
@@ -25,7 +26,7 @@ public class TryWithResources {
 			}
 			
 			try (Scanner in = new Scanner(Paths.get(FILE_PATH_CITIES));
-				PrintWriter out = new PrintWriter("/tmp/out.txt")) {
+				PrintWriter out = new PrintWriter(FILE_OUT)) {
 				while (in.hasNext()) {
 					out.println(in.next().toLowerCase());
 				}
